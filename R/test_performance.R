@@ -3,6 +3,7 @@ library(tidyr)
 library(recipes)
 library(parsnip)
 library(yardstick)
+library(ranger)
 
 ## Read in the items created in model.R
 training <- readr::read_rds(here::here("data/training.Rds"))

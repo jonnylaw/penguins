@@ -72,6 +72,13 @@
       "Repository": "CRAN",
       "Hash": "f3ca785924863b0e4c8cb23b6a5c75a1"
     },
+    "RcppEigen": {
+      "Package": "RcppEigen",
+      "Version": "0.3.3.7.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c6faf038ba4346b1de19ad7c99b8f94a"
+    },
     "SQUAREM": {
       "Package": "SQUAREM",
       "Version": "2020.2",
@@ -573,6 +580,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "22aca7d1181718e927d403a8c2d69d62"
+    },
+    "ranger": {
+      "Package": "ranger",
+      "Version": "0.12.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "561326df07a5bc5266ba17ce3b81cbf1"
     },
     "readr": {
       "Package": "readr",
