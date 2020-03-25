@@ -14,7 +14,7 @@ COPY . .
 RUN Rscript -e "renv::restore()"
 
 # Build and train the models
-RUN Rscript R/model.R R/test_performenace.R
+RUN Rscript R/model.R R/test_performance.R
 
 # Expose port 8000 for api requests to the model
 ENTRYPOINT ["Rscript", "/usr/local/app/R/run.R"]
