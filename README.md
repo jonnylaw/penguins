@@ -3,6 +3,9 @@
 
 # Classifying Iris Data
 
+![Build
+Docker](https://github.com/jonnylaw/iris/workflows/Build%20Docker/badge.svg)
+
 This is an example project which classifys the type of Iris flower from
 the Iris dataset. The model is fit using the
 [tidymodels](https://github.com/tidymodels/tidymodels) metapackage. The
