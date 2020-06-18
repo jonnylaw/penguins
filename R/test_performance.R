@@ -18,7 +18,7 @@ predicted <- predict(mod, new_data = bake(rec, test))
 metrics <- metric_set(accuracy, precision, f_meas)
 
 ## Determine the performance of the algorithm metrics
-performance <- metrics(data = bind_cols(predicted, test), truth = Species, estimate = .pred_class)
+performance <- metrics(data = bind_cols(predicted, test), truth = species, estimate = .pred_class)
 
 ## Write the performance 
 readr::write_rds(performance, here::here("models/test_performance.Rds"))

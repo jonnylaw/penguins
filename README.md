@@ -1,16 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Classifying Iris Data
+# Classifying Penguin Data
 
-![Build
-Docker](https://github.com/jonnylaw/iris/workflows/Build%20Docker/badge.svg)
+![Build Docker](https://github.com/jonnylaw/penguins/workflows/Build%20Docker/badge.svg)
 
-This is an example project which classifys the type of Iris flower from
-the Iris dataset. The model is fit using the
-[tidymodels](https://github.com/tidymodels/tidymodels) metapackage. The
-file `R/model.R` contains the modelling code required. The rough steps
-are
+This project previously used the Iris dataset, however it's now changed to the penguins dataset. See [here](https://towardsdatascience.com/penguins-dataset-overview-iris-alternative-9453bb8c8d95) for details.
+
+This is an example project which classifys the species of Penguin from the [Palmer penguins](https://github.com/allisonhorst/palmerpenguins) dataset. The model is fit using the [tidymodels](https://github.com/tidymodels/tidymodels) metapackage. The file `R/model.R` contains the modelling code required. The rough steps are 
 
   - Split the data into training and test sets
   - Define pre-processing steps using

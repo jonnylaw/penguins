@@ -4,13 +4,14 @@ library(parsnip) # Consistent API for multiple R machine learning models
 library(rsample) # Used to create training and test sets, cross validation etc.
 library(workflows) # Combine a recipe and a model
 library(tune) # Find the best hyper-parameters for a model
+library(palmerpenguins)
 
-# Load the iris data
-data(iris)
+# Load the penguins data
+data("penguins")
 
 ## Split the iris data into training and test data and write it to the data folder
 set.seed(1)
-split <- rsample::initial_split(iris, strata = Species)
+split <- rsample::initial_split(iris, strata = species)
 train <- rsample::training(split)
 test <- rsample::testing(split)
 
@@ -18,7 +19,7 @@ readr::write_rds(train, here::here("data/training.Rds"))
 readr::write_rds(test, here::here("data/testing.Rds"))
 
 ## pre-process the data
-rec <- recipe(Species ~ ., data = train) %>% 
+rec <- recipe(species ~ ., data = train) %>% 
   step_naomit(all_predictors()) %>%
   step_naomit(all_outcomes())
 
@@ -36,7 +37,7 @@ wf <- workflow() %>%
   add_model(model)
 
 ## Use cross validation on the training data
-cv <- rsample::vfold_cv(train, strata = Species)
+cv <- rsample::vfold_cv(train, strata = species)
 
 # Use grid search to find some good hyper-parameters.
 hyper_parameters <- tune::tune_grid(wf, resamples = cv)
@@ -52,7 +53,7 @@ best_rf <- model %>%
   set_args(mtry = 1, trees = 1965)
 
 ## Fit the model to the training data
-fitted_model <- fit(best_rf, Species ~ ., data = juice(prep(rec, train)))
+fitted_model <- fit(best_rf, species ~ ., data = juice(prep(rec, train)))
 
 ## Save the model
 readr::write_rds(fitted_model, here::here("models/random_forest.Rds"))
