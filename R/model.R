@@ -9,9 +9,9 @@ library(palmerpenguins)
 # Load the penguins data
 data("penguins")
 
-## Split the iris data into training and test data and write it to the data folder
+## Split the penguins data into training and test data and write it to the data folder
 set.seed(1)
-split <- rsample::initial_split(iris, strata = species)
+split <- rsample::initial_split(penguins, strata = species)
 train <- rsample::training(split)
 test <- rsample::testing(split)
 
