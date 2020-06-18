@@ -11,7 +11,7 @@ data("penguins")
 
 ## Split the penguins data into training and test data and write it to the data folder
 set.seed(1)
-split <- rsample::initial_split(penguins, strata = species)
+split <- rsample::initial_split(penguins[complete.cases(penguins),], strata = species)
 train <- rsample::training(split)
 test <- rsample::testing(split)
 

@@ -1,4 +1,4 @@
-FROM rocker/r-ver:3.6.1
+FROM rocker/r-ver:4.0.0
 
 WORKDIR /usr/local/app
 
